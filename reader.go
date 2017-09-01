@@ -29,6 +29,7 @@ func NewReader(size int, interval int) *Reader {
 		flag:       false,
 		mu:         sync.Mutex{},
 	}
+	go r.timedTask()
 	return r
 }
 
@@ -87,4 +88,5 @@ func (r *Reader) timedTask() {
 
 func (r *Reader) Stop() {
 	r.alive = false
+	close(r.output)
 }
