@@ -3,6 +3,8 @@ package reader
 import (
 	"sync"
 	"time"
+
+	log "github.com/Sirupsen/logrus"
 )
 
 type Reader struct {
@@ -84,6 +86,7 @@ func (r *Reader) timedTask() {
 			r.wg.Wait()
 		}
 	}
+	log.Infof("timedTask quit")
 }
 
 func (r *Reader) Stop() {
