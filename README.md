@@ -17,7 +17,9 @@ import (
 
 func main() {
 	// the first paramter is max buf size, the second is time interval (in milliseocnds.)
-	// reader will transfer its input items to output either on buff is full or time passes interval milliseocnds since last transfer.
+	// reader will transfer its input items to output either on: 
+	// a) buff is full;
+	// b) time passes interval milliseocnds since last transfer;
 	r := NewReader(200, 50)
 
 	// output is a readonly channel for consumers to read
