@@ -92,4 +92,5 @@ func (r *Reader) timedTask() {
 func (r *Reader) Stop() {
 	r.alive = false
 	close(r.output)
+	close(r.buf)
 }
