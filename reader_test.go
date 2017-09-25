@@ -10,7 +10,7 @@ import (
 func TestReader(t *testing.T) {
 	cnt := 1000000
 	log.Infof("total cnt=%d", cnt)
-	r := NewReader(200, 50)
+	r := NewReader(cnt, 2000, 50)
 	wg := sync.WaitGroup{}
 	consumerCnt := 5
 	wg.Add(consumerCnt + 1)
