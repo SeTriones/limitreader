@@ -89,6 +89,7 @@ func (r *Reader) timedTask() {
 		flag = r.flag
 		itemCnt = len(r.buf)
 		if itemCnt == 0 {
+			r.mu.Unlock()
 			continue
 		}
 		if itemCnt > r.bufSize {
